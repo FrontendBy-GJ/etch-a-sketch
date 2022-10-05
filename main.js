@@ -11,9 +11,9 @@ function createGrid(size) {
 
   for (let i = 0; i < num_of_divs; i++) {
     let div = document.createElement('div');
-    div.style.borderRadius = '8px';
     div.addEventListener('mouseover', () => {
       div.style.backgroundColor = 'black';
+      div.style.transition = '.2s ease-in';
     });
     board.appendChild(div);
   }
