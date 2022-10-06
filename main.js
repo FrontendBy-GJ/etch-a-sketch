@@ -2,6 +2,7 @@ const board = document.querySelector('.container');
 const gridSizebtn = document.querySelector('#gridSize');
 let message = document.querySelector('#message');
 const resetBtn = document.querySelector('#reset');
+let draw = false;
 
 function createGrid(size) {
   board.style.gridTemplateColumns = `repeat(${size},1fr)`;
@@ -12,6 +13,13 @@ function createGrid(size) {
   for (let i = 0; i < num_of_divs; i++) {
     let div = document.createElement('div');
     div.addEventListener('mouseover', () => {
+      if (!draw) {
+        return;
+      }
+      div.style.backgroundColor = 'black';
+      div.style.transition = '.2s ease-in';
+    });
+    div.addEventListener('mousedown', () => {
       div.style.backgroundColor = 'black';
       div.style.transition = '.2s ease-in';
     });
@@ -43,3 +51,6 @@ function resetGrid() {
     div.style.backgroundColor = 'white';
   });
 }
+
+window.addEventListener('mousedown', () => (draw = true));
+window.addEventListener('mouseup', () => (draw = false));
