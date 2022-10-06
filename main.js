@@ -50,7 +50,12 @@ function resetGrid() {
   divs.forEach((div) => {
     div.style.backgroundColor = 'white';
   });
+  board.classList.add('shake');
 }
+
+board.addEventListener('transitionend', () => {
+  board.classList.remove('shake');
+});
 
 window.addEventListener('mousedown', () => (draw = true));
 window.addEventListener('mouseup', () => (draw = false));

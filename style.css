@@ -15,3 +15,26 @@ body {
   height: 500px;
   border: 1px solid #000;
 }
+
+.header {
+  border: 1px solid #000;
+  font-family: 'Silkscreen', cursive;
+  font-size: 3rem;
+}
+.shake {
+  animation: shake 0.3s linear 1;
+}
+@keyframes shake {
+  0% {
+    transform: translate(0);
+  }
+  30% {
+    transform: translate(-20px);
+  }
+  70% {
+    transform: translate(20px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
