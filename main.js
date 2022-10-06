@@ -12,6 +12,7 @@ function createGrid(size) {
 
   for (let i = 0; i < num_of_divs; i++) {
     let div = document.createElement('div');
+    div.setAttribute('class', 'cell');
     div.addEventListener('mouseover', () => {
       if (!draw) {
         return;
@@ -48,7 +49,9 @@ resetBtn.addEventListener('click', resetGrid);
 function resetGrid() {
   const divs = document.querySelectorAll('div');
   divs.forEach((div) => {
-    div.style.backgroundColor = 'white';
+    if (div.style[0] == 'background-color') {
+      div.style.backgroundColor = '#bfbfbf';
+    }
   });
   board.classList.add('shake');
 }
